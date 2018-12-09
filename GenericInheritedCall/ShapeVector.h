@@ -7,15 +7,15 @@
 using namespace std;
 
 template <typename SHAPE_TYPE>
-class VShape : public vector<SHAPE_TYPE>
+class VShape : public vector<SHAPE_TYPE*>
 {
-	typedef typename vector<SHAPE_TYPE>::iterator iterator;
+	typedef typename vector<SHAPE_TYPE*>::iterator iterator;
 public:
 	void draw()
 	{
 		for (iterator it = begin(); it != end(); it++)
 		{
-			it->draw();
+			(*it)->draw();
 		}
 	}
 };
